@@ -722,7 +722,7 @@ void create_model::createModelClassFromSqlite3(
             {
                 info.colType_ = "std::vector<char>";
             }
-            else if (type == "datetime" || type == "date")
+            else if (type == "datetime" || type == "date" || type == "timestamp")
             {
                 info.colType_ = "::trantor::Date";
             }
