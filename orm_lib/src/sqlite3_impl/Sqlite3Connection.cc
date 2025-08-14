@@ -127,9 +127,21 @@ void Sqlite3Connection::init()
         }
         else
         {
+            /*
             sqlite3_extended_result_codes(tmp, true);
             status_ = ConnectStatus::Ok;
             okCallback_(thisPtr);
+            */
+            std::string sql_key = "45610226";
+            ret = sqlite3_key(tmp, sql_key.c_str(), sql_key.length());
+            if (ret != SQLITE_OK){
+                LOG_FATAL << sqlite3_errmsg(connectionPtr_.get());
+                closeCallback_(thisPtr);
+            } else {
+                status_ = ConnectStatus::Ok;
+                sqlite3_extended_result_codes(tmp, true);
+                okCallback_(thisPtr);
+            }
         }
     });
 }

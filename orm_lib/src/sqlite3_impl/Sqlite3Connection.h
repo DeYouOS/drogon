@@ -21,6 +21,7 @@
 #include <trantor/utils/NonCopyable.h>
 #include <trantor/utils/SerialTaskQueue.h>
 #include <sqlite3.h>
+#include <sqlite3mc.h>
 #include <functional>
 #include <iostream>
 #include <memory>

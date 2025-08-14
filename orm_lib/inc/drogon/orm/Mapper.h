@@ -714,6 +714,8 @@ class Mapper
     std::future<size_t> deleteFutureByPrimaryKey(
         const TraitsPKType &key) noexcept;
 
+    DbClientPtr getClient() { return client_; }
+
   protected:
     DbClientPtr client_;
     size_t limit_{0};
